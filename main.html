@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main.css">
+
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/main.css">
+
+    <title>Main</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="links">
+            <a href="#" class="link__">Main</a>
+            <a href="/my_courses/{{user.user_id}}" class="link">My courses</a>
+            <a href="/my_progress/{{user.user_id}}" class="link">My progress</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="welcome">Welcome, {{user.user_nickname}}!</h1>
+        <h2 class="price_main">Ваш баланс: {{user_balance}}</h2>
+        {% for course in courses %}
+        <div class="course">
+            <a href="{{ url_for('course', course_id=course['id'], user_id=user.user_id) }}" class="name__course">{{ course['name'] }}</a>
+            <a href="#" class="creator__course">{{ course['creator'] }}</a>
+            <a href="#" class="price_course">{{course['pr']}}</a>
+        </div>
+        {% endfor %}
+        <a href="/login">Выйти из аккаунта</a>
+    </div>
+</body>
+</html>

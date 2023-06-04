@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="/Site/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/registration.css">
+
+    <!-- Title of Dock -->
+    <title>Registration</title>
+
+<!-- Code -->
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1 for="" class="logo__text">Me</h1>
+        </div>
+        <form class="form" method="POST">
+            <ul class="input">
+                <input type="text" class="input__" placeholder="Enter Nickname..." name="nickname" required>
+                <input type="text" class="input__" placeholder="Enter E-mail..." name="email" required>
+                <input type="password" class="input__" placeholder="Enter Password..." name="password" required> 
+                <div class="user-type">
+                    <input type="checkbox" id="user-type-switch" name="user-type" checked>
+                    <label for="user-type-switch" class="admin">Administrator</label>
+                </div>
+            </ul>
+            <button type="submit" class="btn__reg">
+                <h1 class="btn__reg__text">Registration</h1>
+            </button>
+            <div class="link__">
+                <a href="/login" class="link">Already have an account?</a>
+            </div>
+        </form>
+        {% if error %}
+            <p>Ошибка ввода данных</p>
+        {% endif %}
+        {% if error_already %}
+            <p>Аккаунт уже зарегестрирован</p>
+        {% endif %}
+    </div>
+</body>
+</html>

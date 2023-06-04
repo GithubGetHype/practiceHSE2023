@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Привет admin</h1>
+    {% for i in users_balance %}
+        <p>{{ i.user_id }} {{ i.nickname }} - {{ i.balance }}</p>
+            <form method="POST" action="/admin">
+                <input type="text" name="add_balance" placeholder="введите сумму">
+                <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                <button type="submit" name="add">Добавить баланс</button>
+            </form>
+            {% if i.is_block == 1 %}
+                <form method="POST" action="/admin">
+                    <button type="submit" name="unblock">Разблокировать</button>
+                    <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                </form>
+            {% else %}
+                <form method="POST" action="/admin">
+                    <button type="submit" name="block">Заблокировать</button>
+                    <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                </form>
+            {% endif %}
+
+    {% endfor %}
+    <a href="/login">Выйти из аккаунта</a>
+</body>
+</html>
