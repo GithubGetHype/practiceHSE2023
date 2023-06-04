@@ -1,0 +1,140 @@
+body{
+    background: linear-gradient(116.82deg, #E9EDF0 0%, #E9EDF0 100%);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+}
+
+/* LOGO */
+
+.logo {
+    margin: 20px auto;
+
+    width: 189px;
+    height: 181px;
+
+    background: linear-gradient(134.17deg, #EEF0F5 4.98%, #E6E9EF 94.88%);
+    box-shadow: -12px -12px 20px rgba(255, 255, 255, 0.8), 10px 10px 24px rgba(166, 180, 200, 0.7);
+    border-radius: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo__text{
+    font-family: 'KoHo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 110px;
+    line-height: 169px;
+
+    text-shadow: 3px 3px 4px 0px #AD2A2A inset;
+    color: #CA4747;
+}
+
+/* INPUTS */
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0px;
+}
+
+.admin{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    padding: 0 5px;
+    outline: none;
+
+    color: #CA4747;
+}
+
+.user-type{
+    /* по центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__{
+
+    margin: 10px auto;
+    width: 420px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+
+    background: linear-gradient(134.17deg, #EEF1F5 4.98%, #E6E9EF 94.88%);
+    box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.75), inset 5px 5px 10px rgba(166, 180, 200, 0.75);
+    border-radius: 40px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    padding: 0 25px;
+    outline: none;
+
+    color: #CA4747;
+}
+
+/* Button Registration */
+
+.btn__reg{
+    display: flex;
+    margin: 40px auto;
+    justify-content: center;
+    align-items: center;
+
+    width: 325px;
+    height: 80px;
+
+    background: linear-gradient(134.17deg, #CA4747 4.98%, #B02D2D 94.88%);
+    box-shadow: -12px -12px 20px rgba(255, 255, 255, 0.8), 10px 10px 20px rgba(166, 180, 200, 0.7);
+    border-radius: 40px;
+    outline: none;
+    border: none;
+}
+
+.btn__reg__text{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+/* Button with link */
+
+.link__{
+    text-align: center;
+}
+
+.link{
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #AD2A2A;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/add_course.css">
+</head>
+<body>
+    <h1>Добавление нового курса</h1>
+    
+    <form method="POST" action="/add_course">
+        <input type="text" class="name_course" placeholder="Введите название курса" name="course_name">
+        <input type="text" class="text_course" placeholder="Введите текст курса" name="course_text">
+        <input type="text" class="price_course" placeholder="Введите цену курса" name="course_price"> 
+        <select id="lessons" name="lessons" class="inn">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+    <div id="tasks"></div>
+    <form action="/add_courses">
+        <button type="submit" name="add_course">Добавить курс</button>
+    </form>
+</form>
+<button onclick="addTask()" name="add_tasks">Добавить задачи</button>
+<script>
+    function addTask() {
+        const lessonCount = document.getElementById("lessons").value;
+        const tasksDiv = document.getElementById("tasks");
+        for (let i = 0; i < lessonCount; i++) {
+            const taskDiv = document.createElement("div");
+
+            const nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameInput.placeholder = "Название задачи";
+            nameInput.name = "lesson_name";
+            taskDiv.appendChild(nameInput);
+
+            const textInput = document.createElement("input");
+            textInput.type = "text";
+            textInput.placeholder = "Текст задачи";
+            textInput.name = "lesson_text";
+            taskDiv.appendChild(textInput);
+
+            const answerInput = document.createElement("input");
+            answerInput.type = "text";
+            answerInput.placeholder = "Ответ задачи";
+            answerInput.name = "lesson_answer";
+            taskDiv.appendChild(answerInput);
+
+            tasksDiv.appendChild(taskDiv);
+        }
+    }
+</script>
+</body>
+</html>

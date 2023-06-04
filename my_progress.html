@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/my_progress.css">
+
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="links">
+            <a href="/main/{{user.user_id}}" class="link">Main</a>
+            <a href="/my_courses/{{user.user_id}}" class="link">My courses</a>
+            <a href="#" class="link__">My progress</a>
+        </div>
+    </div>
+    Правильные ответы:
+    {% for answer in answers_list %}
+        <p>ID курса: {{ answer['course_id'] }}</p>
+        <p>ID урока: {{ answer['lesson_id'] }}</p>
+    {% endfor %}
+    <a href="/login">Выйти</a>
+</body>
+</html>

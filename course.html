@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/course.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text">
+        <h1>{{course_text}}</h1>
+    </div>
+    {% for lesson in lessons %}
+    <div class="card__lesson">
+        <h1>{{ lesson['name'] }}</h1>
+        <h2>{{ lesson['question'] }}</h2>
+        <form method="POST" action="{{ url_for('submit_answer') }}">
+            <input type="hidden" name="lesson_number" value="{{ lesson['id'] }}">
+            <input type="text" name="answer">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

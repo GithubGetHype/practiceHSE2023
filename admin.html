@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+    <div class="con">
+        <div class="logo">
+            <h1 for="" class="logo__text">Me</h1>
+        </div>
+        <h1>Hello admin</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nickname</th>
+                <th>Balance</th>
+                <th>Add balance</th>
+                <th>is_block</th>
+            </tr>
+        {% for i in users_balance %}
+        <tr>
+            <td><p>{{ i.user_id }}</p></td>
+            <td><p>{{ i.nickname }}</p></td>
+            <td><p>{{ i.balance }}$</p></td>
+            <td>                
+                <form method="POST" action="/admin">
+                <input type="text" name="add_balance" placeholder="Input sum" class="in">
+                <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                <button type="submit" name="add" class="btn">Add balance</button>
+            </form>
+            </td>
+            <td>
+                {% if i.is_block == 1 %}
+                <form method="POST" action="/admin">
+                    <button type="submit" name="unblock" class="btn">Unlock user</button>
+                    <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                </form>
+                {% else %}
+                    <form method="POST" action="/admin">
+                        <button type="submit" name="block" class="btn">Block user</button>
+                        <input type="hidden" name="user_id" value="{{ i.user_id }}">
+                    </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+        <a href="/login" class="logout">Выйти из аккаунта</a>
+    </div>
+</body>
+</html>
